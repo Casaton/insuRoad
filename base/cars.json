@@ -20,5 +20,16 @@
         "seats": 5,
         "full_weight": "2100 кг",
         "empty_weight": "1500 кг"
+    },
+    {
+        "plate": "CA9876MA",
+        "manufacturer": "",
+        "model": "Lanos",
+        "year": 2004,
+        "engine_volume": "1.5",
+        "vin": "ASDASDADFADFADFADF",
+        "seats": 5,
+        "full_weight": "1800 кг",
+        "empty_weight": "1600 кг"
     }
 ]
