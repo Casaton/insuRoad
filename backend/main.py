@@ -5,13 +5,7 @@ import os
 
 app = Flask(__name__)
 
-CORS(app, resources={
-    r"/api/*": {
-        "origins": "*",
-        "methods": ["POST", "OPTIONS"],
-        "allow_headers": ["Content-Type"]
-    }
-})
+CORS(app) 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CARS_PATH = os.path.join(BASE_DIR, "..", "base", "cars.json")

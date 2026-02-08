@@ -5,6 +5,11 @@ const status = document.getElementById("status");
 const stepSearch = document.getElementById("step-search");
 const stepResult = document.getElementById("step-result");
 
+const API_URL =
+  location.hostname === "localhost" || location.hostname === "127.0.0.1"
+    ? "http://127.0.0.1:5000/api"
+    : "https://ТВІЙ_USERNAME.pythonanywhere.com/api";
+
 btn.addEventListener("click", () => {
   const plate = input.value.trim().toUpperCase();
   status.textContent = "";
@@ -18,21 +23,16 @@ btn.addEventListener("click", () => {
 
   status.textContent = "Пошук...";
 
-const API_URL =
-  location.protocol === "file:"
-    ? "http://127.0.0.1:5000/api"
-    : location.hostname === "127.0.0.1" || location.hostname === "localhost"
-    ? "http://127.0.0.1:5000/api"
-    : "https://user.pythonanywhere.com/api";
-
-
   fetch(`${API_URL}/search`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ plate }),
   })
-    .then((res) => res.json())
-    .then((data) => {
+    .then(res => {
+      if (!res.ok) throw new Error("HTTP error");
+      return res.json();
+    })
+    .then(data => {
       if (data.status !== "found") {
         status.textContent = "Авто з таким номерним знаком НЕ ЗНАЙДЕНО!!!";
         status.classList.add("error");
@@ -51,8 +51,9 @@ const API_URL =
       stepSearch.classList.add("hidden");
       stepResult.classList.remove("hidden");
     })
-    .catch(() => {
-      status.textContent = "Помилка з'єднання";
+    .catch(err => {
+      console.error(err);
+      status.textContent = "Помилка з'єднання з сервером";
       status.classList.add("error");
     });
 });
