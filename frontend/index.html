@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Пошук авто</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <div class="card">
+      <h2>Перевірка авто</h2>
+
+      <!-- Блок вводу -->
+      <div id="step-search">
+        <div class="plate-input">
+          <div class="ua">
+            <span>UA</span>
+            <div class="flag"></div>
+          </div>
+          <input id="plateInput" placeholder="AA1234BB" maxlength="8" />
+        </div>
+
+        <button id="searchBtn">Знайти</button>
+        <div id="status" class="status"></div>
+      </div>
+
+      <!-- Блок результату -->
+      <div id="step-result" class="hidden">
+        <h3>Крок 1</h3>
+
+        <div class="field"><b>Виробник:</b> <span id="manufacturer"></span></div>
+        <div class="field"><b>Модель:</b> <span id="model"></span></div>
+        <div class="field"><b>Рік:</b> <span id="year"></span></div>
+        <div class="field"><b>Обʼєм двигуна:</b> <span id="engine"></span></div>
+        <div class="field"><b>VIN:</b> <span id="vin"></span></div>
+        <div class="field"><b>Сидячих:</b> <span id="seats"></span></div>
+        <div class="field"><b>Повна маса:</b> <span id="fullWeight"></span></div>
+        <div class="field"><b>Без навантаження:</b> <span id="emptyWeight"></span></div>
+
+        <button onclick="location.reload()">Продовжити</button>
+      </div>
+
+      <h5>AA1234BB &nbsp;&nbsp;&nbsp;&nbsp; BC5678CD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; такі присутні в базі</h5>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

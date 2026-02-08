@@ -1,0 +1,24 @@
+[
+    {
+        "plate": "AA1234BB",
+        "manufacturer": "Toyota",
+        "model": "Corolla",
+        "year": 2018,
+        "engine_volume": "1.6",
+        "vin": "JTDBR32E720123456",
+        "seats": 5,
+        "full_weight": "1800 кг",
+        "empty_weight": "1300 кг"
+    },
+    {
+        "plate": "BC5678CD",
+        "manufacturer": "Volkswagen",
+        "model": "Passat",
+        "year": 2020,
+        "engine_volume": "2.0",
+        "vin": "WVWZZZ3CZLE098765",
+        "seats": 5,
+        "full_weight": "2100 кг",
+        "empty_weight": "1500 кг"
+    }
+]
