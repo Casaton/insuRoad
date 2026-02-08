@@ -8,7 +8,7 @@ const stepResult = document.getElementById("step-result");
 const API_URL =
   location.hostname === "localhost" || location.hostname === "127.0.0.1"
     ? "http://127.0.0.1:5000/api"
-    : "https://ТВІЙ_USERNAME.pythonanywhere.com/api";
+    : "https://Casaton.pythonanywhere.com/api";
 
 btn.addEventListener("click", () => {
   const plate = input.value.trim().toUpperCase();
